@@ -72,7 +72,6 @@ curl localhost:80
 ```
 
 Done!
-
 ---
 
 ##  What If I Don’t Have Kubernetes Installed?
