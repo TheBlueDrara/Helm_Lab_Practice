@@ -58,7 +58,20 @@ kubectl get pods
 curl http://<NodeIP>:80
 ```
 
-> You should see the static HTML page of the `details_app` web interface.
+> You should see the static HTML page of the web interface.
+> If you want to run the local docker compose lab please continueo the guide
+
+## Local Lab Only!
+
+Run the lab locally
+
+```
+cd docker
+docker compose up -d
+curl localhost:80
+```
+
+Done!
 
 ---
 
