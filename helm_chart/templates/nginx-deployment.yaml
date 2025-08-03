@@ -18,11 +18,11 @@ spec:
           ports:
             - containerPort: {{ .Values.nginx.port }}
           volumeMounts:
-            - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf
-              subPath: default.conf
+            - name: {{ .Values.nginx.volumeMount.configMapName }}
+              mountPath: {{ .Values.nginx.volumeMount.mountPath }}
+              subPath: {{ .Values.nginx.volumeMount.subPath }}
       volumes:
-        - name: nginx-config
+        - name: {{ .Values.nginx.volumeMount.configMapName }}
           configMap:
-            name: nginx-config
+            name: {{ .Values.nginx.volumeMount.configMapName }}
 

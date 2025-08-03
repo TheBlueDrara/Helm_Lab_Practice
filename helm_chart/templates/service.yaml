@@ -1,26 +1,26 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: details-app-service
+  name: {{ .Values.detailsApp.name }}
 spec:
   selector:
-    app: details-app
+    app: {{ .Values.detailsApp.name }}
   ports:
     - name: http
-      port: 5000
-      targetPort: 5000
+      port: {{ .Values.detailsApp.port }}
+      targetPort: {{ .Values.detailsApp.port }}
   type: ClusterIP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: {{ .Values.nginx.name }}
 spec:
   selector:
-    app: nginx
+    app: {{ .Values.nginx.name }}
   ports:
     - name: http
-      port: 80
-      targetPort: 80
+      port: {{ .Values.nginx.port }}
+      targetPort: {{ .Values.nginx.port }}
   type: NodePort
 
